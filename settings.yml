@@ -30,6 +30,14 @@ align_justify_text:
   default: "Text"
   description:
     en: Enter the placeholder text that appears in the composer after the user clicks the button.
+bbcode_color_button:
+  default: "Color"
+  description:
+    en: Enter the text for the title of the button in the composer.
+bbcode_color_text:
+  default: "Text"
+  description:
+    en: Enter the placeholder text that appears in the composer after the user clicks the button.
 strikethrough_button:
   default: "Strike-through"
   description:
