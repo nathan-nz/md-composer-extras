@@ -57,6 +57,14 @@ api.onToolbarCreate(toolbar => {
         perform: e => e.applySurround('[wrap="justify"]\n', '\n[/wrap]', 'align_justify_text')
     });
 });
+api.onToolbarCreate(toolbar => {
+    toolbar.addButton({
+        id: "bbcode_color_button",
+        group: "extras",
+        icon: "palette",
+        perform: e => e.applySurround('[color=#222]', '[/color]', 'bbcode_color_text')
+    });
+});
 
 // EXTRAS
 api.addToolbarPopupMenuOptionsCallback(() => {
@@ -113,6 +121,10 @@ translations.composer.align_justify_text =
 translations.composer.strikethrough_button_title = settings.strikethrough_button;
 translations.composer.strikethrough_text =
   settings.strikethrough_text;
+  
+translations.composer.bbcode_color_button_title = settings.bbcode_color_button;
+translations.composer.bbcode_color_text =
+  settings.bbcode_color_text;
 
 translations.composer.superscript_button_title = settings.superscript_button;
 translations.composer.superscript_text =
