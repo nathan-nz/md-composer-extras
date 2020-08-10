@@ -61,18 +61,26 @@ api.addToolbarPopupMenuOptionsCallback(() => {
   };
 });
 
+api.addToolbarPopupMenuOptionsCallback(() => {
+  return {
+      action: "bbcodecolor",
+      icon: "palette",
+      label: "bbcode_color_button"
+  };
+});
+
 api.modifyClass("controller:composer", {
   actions: {
     strikethrough() {
       this.get("toolbarEvent").applySurround("<s>", "</s>", "strikethrough_text");
     },
-	superscript() {
+    superscript() {
       this.get("toolbarEvent").applySurround("<sup>", "</sub>", "superscript_text");
     },
     subscript() {
       this.get("toolbarEvent").applySurround("<sub>", "</sub>", "subscript_text");
     },
-	aligncenter() {
+    aligncenter() {
       this.get("toolbarEvent").applySurround('[wrap="center"]\n', '\n[/wrap]', "align_center_text");
     },
     alignright() {
@@ -83,6 +91,9 @@ api.modifyClass("controller:composer", {
     },
     floatleft() {
       this.get("toolbarEvent").applySurround('[wrap="floatl"]\n', '\n[/wrap]', "float_left_text");
+    }
+    bbcodecolor() {
+      this.get("toolbarEvent").applySurround('[color=#222]', '[/color]', bbcode_color_text");
     }
   }
 });
@@ -131,5 +142,9 @@ translations.composer.columns_text =
 translations.float_left_button = settings.float_left_button;
 translations.composer.float_left_text =
   settings.float_left_text;
+  
+translations.bbcode_color_button = settings.bbcode_color_button;
+translations.composer.bbcode_color_text =
+  settings.bbcode_color_text;
  
 </script>
