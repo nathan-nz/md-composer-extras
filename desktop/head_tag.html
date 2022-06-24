@@ -1,7 +1,7 @@
 <script type="text/discourse-plugin" version="0.8">
 const { iconNode } = require("discourse-common/lib/icon-library");
 // TOOLBAR
-if (theme-setting 'underline_button') {
+{{#if (theme-setting 'underline_button')}}
     (api.onToolbarCreate(toolbar => {
         toolbar.addButton({
 	    id: "underline_button",
@@ -10,7 +10,7 @@ if (theme-setting 'underline_button') {
 	    perform: e => e.applySurround('[u]', '[/u]', 'underline_text')
         });
     });
-}
+{{/if}}
 api.onToolbarCreate(toolbar => {
     toolbar.addButton({
         id: "strikethrough_button",
